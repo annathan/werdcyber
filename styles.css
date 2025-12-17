@@ -23,6 +23,12 @@ section:first-of-type {
   border-top: none;
 }
 
+.logo {
+  max-width: 160px;
+  margin-bottom: 24px;
+}
+
+
 .hero {
   margin-bottom: 24px;
 }
