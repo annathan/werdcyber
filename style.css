@@ -37,11 +37,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 0;
+  padding: 32px 0;
 }
 
 .logo {
-  max-height: 36px;
+height: 64px;
+width: auto;
 }
 
 .header-cta {
