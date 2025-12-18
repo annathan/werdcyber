@@ -1,4 +1,11 @@
 /* BASE */
+:root {
+  --signals-blue: #4f7fa6;
+  --signals-navy: #1f2f4a;
+  --signals-green: #2f5f5b;
+  --signals-black: #0b0d0e;
+}
+
 
 body {
   margin: 0;
@@ -46,21 +53,65 @@ body {
 /* BANDS */
 
 .band {
+  position: relative;
   padding: 120px 0;
 }
 
+
 .band-light {
-  background: #ffffff;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f6f8f7 100%
+    );
 }
 
 .band-muted {
-  background: #f3f5f4;
+  background:
+    linear-gradient(
+      180deg,
+      var(--signals-green) 0%,
+      #f3f5f4 60%
+    );
 }
 
 .band-dark {
-  background: linear-gradient(180deg, #0e1111 0%, #1f2a24 100%);
+  background:
+    linear-gradient(
+      180deg,
+      var(--signals-black) 0%,
+      var(--signals-navy) 45%,
+      var(--signals-green) 100%
+    );
   color: #ffffff;
 }
+.band::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -120px;
+  height: 120px;
+  background: inherit;
+  filter: blur(40px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.band-dark .split-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.15)
+    );
+  border-radius: 6px;
+}
+
 
 /* SPLIT LAYOUT */
 
@@ -91,6 +142,7 @@ body {
   width: 100%;
   height: auto;
   border-radius: 6px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.25);
 }
 
 /* LISTS */
