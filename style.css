@@ -1,38 +1,271 @@
-/* MOBILE FIXES */
+/* =================================
+   BASE + VARIABLES
+================================= */
+
+:root {
+  --signals-blue: #4f7fa6;
+  --signals-navy: #1f2f4a;
+  --signals-green: #2f5f5b;
+  --signals-black: #0b0d0e;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1f2a24;
+  line-height: 1.6;
+}
+
+/* =================================
+   RAIL SYSTEM
+================================= */
+
+.rail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.rail.narrow {
+  max-width: 720px;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7e6;
+}
+
+.header-rail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0;
+}
+
+.logo {
+  height: 64px;
+  width: auto;
+}
+
+.header-cta {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--signals-green);
+}
+
+/* =================================
+   BANDS + GRADIENT FLOW
+================================= */
+
+.band {
+  position: relative;
+  padding: 120px 0;
+}
+
+.band::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -120px;
+  height: 120px;
+  background: inherit;
+  filter: blur(40px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.band-light {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f6f8f7 100%
+  );
+}
+
+.band-muted {
+  background: linear-gradient(
+    180deg,
+    var(--signals-green) 0%,
+    #f3f5f4 60%
+  );
+}
+
+.band-dark {
+  background: linear-gradient(
+    180deg,
+    var(--signals-black) 0%,
+    var(--signals-navy) 45%,
+    var(--signals-green) 100%
+  );
+  color: #ffffff;
+}
+
+/* =================================
+   SPLIT LAYOUT
+================================= */
+
+.split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.split.reverse {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.split-text h1 {
+  font-size: 3.4rem;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.lead {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  color: #dfe5e2;
+}
+
+.split-media {
+  position: relative;
+}
+
+.split-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+}
+
+/* Dark overlay so images blend into gradients */
+.band-dark .split-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.15)
+  );
+  border-radius: 8px;
+}
+
+/* =================================
+   LISTS
+================================= */
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+/* =================================
+   CTA BUTTON
+================================= */
+
+.cta-primary {
+  display: inline-block;
+  padding: 16px 36px;
+  background: var(--signals-green);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* =================================
+   FAQ
+================================= */
+
+.faq h2 {
+  font-size: 2.8rem;
+}
+
+.faq-intro {
+  margin-bottom: 64px;
+  color: #cccccc;
+}
+
+.faq-item {
+  border-bottom: 1px solid #333;
+}
+
+.faq-item button {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 24px 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-item .answer {
+  display: none;
+  padding-bottom: 24px;
+  color: #cccccc;
+}
+
+.faq-item.open .answer {
+  display: block;
+}
+
+/* =================================
+   CTA BAND
+================================= */
+
+.cta-band h2 {
+  font-size: 2.6rem;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+  padding: 48px 0;
+  font-size: 0.9rem;
+}
+
+/* =================================
+   MOBILE (SINGLE CLEAN BREAKPOINT)
+================================= */
 
 @media (max-width: 768px) {
-
-  /* Global spacing */
-  .band {
-    padding: 64px 0;
-  }
 
   .rail {
     padding: 0 24px;
   }
 
-  /* Headings */
-  .split-text h1 {
-    font-size: 2.1rem;
+  .band {
+    padding: 64px 0;
   }
 
-  .band-muted h2 {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
-  }
-
-  .lead {
-    font-size: 1.1rem;
-  }
-
-  /* Split layout */
   .split {
     display: flex;
     flex-direction: column;
     gap: 40px;
   }
 
-  /* Force clean order for What I do differently */
+  .split-text h1 {
+    font-size: 2.1rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  /* Fix "What I do differently" */
   .band-muted .split-text {
     order: 1;
   }
@@ -42,15 +275,6 @@
     margin-top: 32px;
   }
 
-  /* Images */
-  .split-media img {
-    max-height: 320px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 24px 48px rgba(0,0,0,0.25);
-  }
-
-  /* Lists */
   .band-muted ul {
     padding-left: 0;
     margin-top: 24px;
@@ -62,12 +286,17 @@
     font-size: 1.05rem;
   }
 
-  /* CTA */
+  .split-media img {
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.25);
+  }
+
   .cta-primary {
     margin-top: 16px;
   }
 
-  /* FAQ */
   .faq-item button {
     padding: 18px 0;
     font-size: 1rem;
