@@ -2,35 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Werd Cyber</title>
-  <meta name="description" content="Cyber risk clarity for business leaders. Understand where you stand and what to do next.">
+  <meta name="description" content="Cyber risk clarity for business leaders. Understand exposure, priorities, and next steps.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<main>
-
   <!-- HERO -->
-  <section class="hero">
-    <div class="inner">
+  <section class="band band-dark hero">
+    <div class="rail">
       <img src="assets/WerdCyberLogo.jpg" alt="Werd Cyber" class="logo">
       <h1>You are probably exposed to cyber risk.<br>You just don’t know where.</h1>
-      <p>
-        Cyber matters. The problem is not awareness, it is clarity.
+      <p class="hero-lead">
+        Cyber is not the problem. Lack of clarity is.
         I help business leaders understand their real exposure and what actually needs attention.
       </p>
-      <a href="#contact" class="button primary">Talk to Andrew</a>
+      <a href="#contact" class="cta-primary">Talk to Andrew</a>
     </div>
   </section>
 
   <!-- PROBLEM -->
-  <section class="content">
-    <div class="inner">
+  <section class="band band-light">
+    <div class="rail">
       <h2>The problem I see every week</h2>
       <p>
-        Leaders are told cyber is critical, but the advice they receive is fragmented, technical,
-        or driven by tools.
+        Leaders know cyber matters, but the advice they receive is fragmented, technical,
+        or driven by products and compliance checklists.
       </p>
       <p>
         The result is uncertainty, delayed decisions, and risk that quietly grows.
@@ -38,32 +36,32 @@
     </div>
   </section>
 
-  <!-- IMAGE BAND -->
+  <!-- IMAGE -->
   <section class="image-band">
     <img src="assets/womandata.png" alt="">
   </section>
 
   <!-- SOLUTION -->
-  <section class="content alt">
-    <div class="inner">
+  <section class="band band-muted">
+    <div class="rail">
       <h2>What I do differently</h2>
-      <ul>
-        <li>I focus on business risk, not products</li>
-        <li>I use the Essential 8 as a benchmark, not a compliance exercise</li>
-        <li>I explain what matters in plain English</li>
-        <li>You get clarity and a sensible path forward</li>
+      <ul class="bullet-list">
+        <li>I start with business risk, not technology</li>
+        <li>I use the Essential 8 as a benchmark, not a checkbox exercise</li>
+        <li>I explain exposure in plain English</li>
+        <li>You leave with clear priorities and next steps</li>
       </ul>
     </div>
   </section>
 
-  <!-- IMAGE BAND -->
+  <!-- IMAGE -->
   <section class="image-band">
     <img src="assets/deskstrategy.png" alt="">
   </section>
 
   <!-- FAQ -->
-  <section class="faq">
-    <div class="inner">
+  <section class="band band-dark faq">
+    <div class="rail">
       <h2>FAQ</h2>
       <p class="faq-intro">
         Common questions from business owners, directors, and senior leaders.
@@ -81,12 +79,11 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">Is this for business owners and directors, or IT teams?</button>
+        <button class="faq-question">Is this for business owners or IT teams?</button>
         <div class="faq-answer">
           <p>
-            This is for decision makers. I work with owners, directors, and senior leaders who need a
-            clear view they can act on. I may speak with IT to confirm facts, but the output is written
-            for leadership.
+            This is for decision makers. I may speak with IT to confirm facts,
+            but the output is written for leaders who need clarity they can act on.
           </p>
         </div>
       </div>
@@ -95,8 +92,8 @@
         <button class="faq-question">How do you use the Essential 8?</button>
         <div class="faq-answer">
           <p>
-            I use it as a benchmark for good practice. I explain each area in plain English and show
-            what sensible progress looks like for your size and context.
+            I use it as a benchmark for good practice and explain what sensible progress
+            looks like for your size and context.
           </p>
         </div>
       </div>
@@ -105,8 +102,8 @@
         <button class="faq-question">What do we receive at the end?</button>
         <div class="faq-answer">
           <p>
-            You receive a short, board ready summary showing your current position, key risks in
-            business language, and a practical set of next steps.
+            A short, board ready summary showing your position, key risks in business language,
+            and a practical set of next steps.
           </p>
         </div>
       </div>
@@ -114,31 +111,30 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta" id="contact">
-    <div class="inner">
+  <section class="band band-dark band-cta" id="contact">
+    <div class="rail">
       <h2>Ready to get clarity?</h2>
-      <p>
-        If you want a clear view of where you stand and what to focus on next,
+      <p class="cta-lead">
+        If you want to understand where you stand and what to focus on next,
         let’s talk.
       </p>
-      <a href="mailto:hello@werdcyber.au" class="button primary">Contact Andrew</a>
+      <a href="mailto:hello@werdcyber.au" class="cta-primary">Contact Andrew</a>
     </div>
   </section>
 
-  <footer>
-    <p>© Werd Cyber</p>
+  <footer class="band band-light footer">
+    <div class="rail">
+      <p>© Werd Cyber</p>
+    </div>
   </footer>
 
-</main>
-
-<script>
-  document.querySelectorAll(".faq-question").forEach(button => {
-    button.addEventListener("click", () => {
-      const item = button.parentElement;
-      item.classList.toggle("open");
+  <script>
+    document.querySelectorAll(".faq-question").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("open");
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
